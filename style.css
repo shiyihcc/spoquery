@@ -26,20 +26,34 @@ a:hover {
 h1 {
     font-size: 19px;
     line-height: 28px;
+    margin-top: 4px;
     margin-bottom: 8px;
 }
 h2 {
+    margin-bottom: 10px;
     font-size: 17px;
 }
 p {
     color: #666666;
-    margin-bottom: 6px;
+    margin-top: 6px;
+    margin-bottom: 9px;
 }
 hr {
     width: 100%;
     border: 0;
+    margin: 10px auto;
     border-bottom: solid 1px #b7ddf2;
 }
+
+ul {
+    margin: 0;
+}
+li {
+    margin-bottom: 3px;
+    padding-left: 0;
+    color: #005591;
+}
+
 table {
     margin: 10px auto;
     border-collapse: collapse;

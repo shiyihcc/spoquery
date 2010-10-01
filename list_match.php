@@ -13,6 +13,12 @@ $grade_id = (int)$_REQUEST['grade_id'];
 	<meta charset="UTF-8" />
 	<title>选择比赛 - <?php echo $event_shortname; ?>分数查询系统</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script type="text/javascript">
+    function delete_confirm(action, id) {
+		r = confirm("您确认要删除这个比赛吗？该比赛的所有成绩也将删除。");
+		return r;
+    }
+    </script>
 </head>
 <body>
 	<div id="wrapper">
@@ -38,20 +44,20 @@ $grade_id = (int)$_REQUEST['grade_id'];
 				$query .= " AND $table_match.event_id = $event_id";
 			if ($grade_id)
 				$query .= " AND $table_match.grade_id = $grade_id";
-			$result = $dbc->query($query);
 			if ($debug && $login)
-				echo "<p>" . $query . "</p>";
+				echo "<p class=\"xsmall\">" . $query . "</p>";
+			$result = $dbc->query($query);
 			while ($row = $result->fetch_assoc()) {
 				echo "<li>";
 				if ($login) {
-					echo "<a href=\"delete_action.php\">[删除]</a> ";
+					echo "<a href=\"javascript:alert('对不起，该功能暂不可用...')\" onclick=\"return delete_confirm();\" title=\"删除\">[x]</a> ";
 				}
 				echo "<a href=\"show_match.php?id={$row['id']}\">{$row['grade']}{$row['event']}</a></li>";
 			}
 			?>
 		</ul>
 		<hr />
-		<p>♥ Proudly powered by Spoquery, made in HCC.</p>
+		<p class="xsmall">♥ <?php echo $footer_string; ?></p>
   	</div>
 </body>
 </html>

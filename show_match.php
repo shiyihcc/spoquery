@@ -33,6 +33,12 @@ td {
 	width: 100px;
 }
     </style>
+	<script type="text/javascript">
+    function delete_confirm(id) {
+		r = confirm("您确认要删除该条成绩吗？这会导致比赛名次出现空缺，请尽量使用修改功能。如果一定要删除，请随后修改相关的名次数据。");
+		return r;
+    }
+    </script>
 </head>
 <body>
 	<div id="wrapper">
@@ -52,21 +58,21 @@ td {
 			         WHERE match_id = $match_id";
 			$result = $dbc->query($query);
 			if ($debug && $login)
-				echo "<p>" . $query . "</p>";
+				echo "<p class=\"xsmall\">" . $query . "</p>";
 			while ($row = $result->fetch_assoc()) {
 				echo "<tr><td>{$row['rank']}</td>" .
 					 "<td>{$row['name']}</td>" .
 					 "<td>{$row['class']}</td>" .
 					 "<td>{$row['score']}</td>";
 				if ($login) {
-					echo "<td><a href=\"edit.php?id={$row['id']}\">修改</a> · <a href=\"\" onclick=\"delete_confirm()\">删除</a></td>";
+					echo "<td><a href=\"edit.php?id={$row['id']}\">修改</a> · <a href=\"delete_action.php?id={$row['id']}\" onclick=\"return delete_confirm();\">删除</a></td>";
 				}
 				echo "</tr>";
 			}
 			?>
 		</table>
 		<hr />
-		<p>♥ Proudly powered by Spoquery, made in HCC.</p>
+		<p class="xsmall">♥ <?php echo $footer_string; ?></p>
   	</div>
 </body>
 </html>

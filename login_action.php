@@ -4,7 +4,7 @@ require('inc/common.php');
 require('inc/admin_common.php');
 
 if ($_REQUEST['password'] == $admin_password) {
-	$_SESSION['login'] = TRUE;
+	$_SESSION[$session_login] = TRUE;
 	redirect_with_alert('登录成功！', 'index.php');
 }
 else {

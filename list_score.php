@@ -6,6 +6,7 @@ $login = is_login();
 
 $grade = (int)$_REQUEST['grade'];
 $class = (int)$_REQUEST['class'];
+$name = escape_data($_REQUEST['name']);
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -40,9 +41,7 @@ td {
 	<script type="text/javascript">
     function delete_confirm(id) {
 		r = confirm("您确认要删除该条成绩吗？这会导致比赛名次出现空缺，请尽量使用修改功能。如果一定要删除，请随后修改相关的名次数据。");
-		if (r == true) {
-			document.location = "delete_action.php?id=" + id;
-		}
+		return r;
     }
     </script>
 </head>
@@ -76,8 +75,10 @@ td {
 				$query .= " AND $table_score.class = $class";
 			if ($grade)
 				$query .= " AND $table_match.grade_id = $grade";
+			if ($name)
+				$query .= " AND $table_score.name LIKE '%$name%'";
 			if ($debug && $login)
-				echo "<p>" . $query . "</p>";
+				echo "<p class=\"xsmall\">" . $query . "</p>";
 			$result = $dbc->query($query);
 			while ($row = $result->fetch_assoc()) {
 				echo "<tr><td>{$row['grade']}{$row['event']}</td>" .
@@ -86,14 +87,14 @@ td {
 					 "<td>{$row['class']}</td>" .
 					 "<td>{$row['score']}</td>";
 				if ($login) {
-					echo "<td><a href=\"edit.php?id={$row['id']}\">修改</a> · <a href=\"\" onclick=\"delete_confirm('{$row['id']}'); return false;\">删除</a></td>";
+					echo "<td><a href=\"edit.php?id={$row['id']}\">修改</a> · <a href=\"delete_action.php?id={$row['id']}\" onclick=\"return delete_confirm();\">删除</a></td>";
 				}
 				echo "</tr>";
 			}
 			?>
 		</table>
 		<hr />
-		<p>♥ Proudly powered by Spoquery, made in HCC.</p>
+		<p class="xsmall">♥ <?php echo $footer_string; ?></p>
   	</div>
 </body>
 </html>

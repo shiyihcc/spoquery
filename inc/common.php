@@ -5,6 +5,10 @@ require('mysql_conn.php');
 
 $app_version = '0.2.0pre';
 
+$session_login = 'Spoquery-' . $app_unique_id . '-login';
+
+$footer_string = "Proudly powered by <a href=\"http://code.google.com/p/hcc-apps/wiki/Spoquery\">Spoquery</a> $app_version, made in <a href=\"http://www.shiyihcc.com\">HCC</a>.";
+
 $table_score = $table_prefix . 'score';
 $table_grade = $table_prefix . 'grade';
 $table_match = $table_prefix . 'match';
@@ -46,12 +50,12 @@ function get_match_name_by_grade_and_event($grade_id, $event_id) {
 	global $table_grade;
 	global $table_event;
 
-	$query = "SELECT name FROM $table_grade WHERE id=$grade_id;";
+	$query = "SELECT name FROM $table_grade WHERE id = $grade_id;";
 	$result = $dbc->query($query);
 	$row = $result->fetch_assoc();
 	$match_name = $row['name'];
 	
-	$query = "SELECT name FROM $table_event WHERE id=$event_id;";
+	$query = "SELECT name FROM $table_event WHERE id = $event_id;";
 	$result = $dbc->query($query);
 	$row = $result->fetch_assoc();
 	$match_name .= $row['name'];

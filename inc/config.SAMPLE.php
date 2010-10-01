@@ -30,4 +30,7 @@ $admin_password = 'miao!!!';
 
 $debug = TRUE;
 
+# 若在一个服务器上存在多个 Spoquery，请设置此项
+$app_unique_id = '1_L0v3_LM7';
+
 ?>

@@ -71,7 +71,7 @@ td input {
 			</p>
 		</form>
 		<hr />
-		<p>♥ Proudly powered by Spoquery, made in HCC.</p>
+		<p class="xsmall">♥ <?php echo $footer_string; ?></p>
   	</div>
 </body>
 </html>

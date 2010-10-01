@@ -53,7 +53,7 @@ td input {
 					     FROM $table_score
 					     WHERE id = $score_id";
 				if ($debug)
-					echo "<p>" . $query . "</p>";
+					echo "<p class=\"xsmall\">" . $query . "</p>";
 				$result = $dbc->query($query);
 				$row = $result->fetch_assoc();
 				$match = get_match_name_by_id($row['match_id']);
@@ -67,7 +67,7 @@ td input {
 			<p><input type="hidden" name="score_id" value="<?php echo $score_id; ?>" /><input type="submit" value="提交" /></p>
 		<form>
 		<hr />
-		<p>♥ Proudly powered by Spoquery, made in HCC.</p>
+		<p class="xsmall">♥ <?php echo $footer_string; ?></p>
   	</div>
 </body>
 </html>

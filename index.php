@@ -4,13 +4,14 @@
 # Check SQL injure
 
 # TODO improve:
-# SQL near = space
+# Use spaces instead of tabs
 # Deal with no result
 # Make search result clickable.
-# Footer string update
 
 require('inc/common.php');
 require('inc/admin_common.php');
+
+$login = is_login();
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -34,7 +35,7 @@ require('inc/admin_common.php');
         ?>分数查询系统</h1>
         <p class="small"><a href="http://www.shiyihcc.com">HCC</a> » <a href="index.php">分数查询系统</a> » 首页</p>
         <hr />
-        <div class="warn small" style="text-align: left;"><p>大家好，我今天一个误操作，导致整个数据库被 drop 了……在此，我表示最诚挚的歉意。我真的错了……输分的同志们，我对不起你们……原谅我。你们辛苦了～</p><p>另外如果大家遇到什么问题，可以邮件联系我：liu.dongyuan@gmail.com。再次对你们表示感谢。</p><p>关于建华的班级，请先写为 10x 班。如建华2班写为 102 班。</p><p>关于并列的成绩，名次那个框内容是可以改的。把名次改成一样的就行了。</p><p class="xsmall" style="text-align: right;">柳东原 2010年9月30日</p></div>
+        <div class="warn small" style="text-align: left;"><p>大家好，我今天一个误操作，导致整个数据库被 drop。在此，我表示最诚挚的歉意。我真的错了…输分的同志们，我对不起你们…原谅我。你们辛苦了～</p><p>另外如果大家遇到什么问题，可以邮件联系我：liu.dongyuan@gmail.com。再次对你们表示感谢。</p><p>关于建华的班级，请先写为 10x 班。如建华2班写为 102 班。</p><p>关于并列的成绩，名次那个框内容是可以改的。把名次改成一样的就行了。</p><p class="xsmall" style="text-align: right;">柳东原 2010年9月30日</p></div>
         <hr />
         <h2>按年级查询</h2>
         <ul>
@@ -95,7 +96,7 @@ require('inc/admin_common.php');
         </ul>
         <hr />
         <?php
-        if ($_SESSION['login']) {
+        if ($login) {
             echo '<p><a href="manage.php">管理面版</a> | <a href="logout_action.php">登出</a></p><hr />';
         } else {
             echo <<<EOF
@@ -107,7 +108,7 @@ require('inc/admin_common.php');
 EOF;
         }
         ?>
-        <p class="xsmall"><a onclick="show_login()">♥</a> Proudly powered by <a href="http://code.google.com/p/hcc-apps/wiki/Spoquery">Spoquery</a>, made in <a href="http://www.shiyihcc.com">HCC</a>.</p>
+        <p class="xsmall"><a onclick="show_login()">♥</a> <?php echo $footer_string; ?></p>
     </div>
 </body>
 </html>

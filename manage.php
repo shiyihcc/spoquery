@@ -10,6 +10,12 @@ check_login();
 	<meta charset="UTF-8" />
 	<title>管理面版 - <?php echo $event_shortname; ?>分数查询系统</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script type="text/javascript">
+    function delete_confirm(action, id) {
+		r = confirm("您确认要删除这一项吗？");
+		return r;
+    }
+    </script>
 </head>
 <body>
 	<div id="wrapper">
@@ -55,8 +61,7 @@ check_login();
 			$query = "SELECT * FROM $table_grade;";
 			$result = $dbc->query($query);
 			while ($row = $result->fetch_assoc()) {
-				echo "<li>{$row['name']} <a href=\"manage_action.php?action=" .
-				     ACTION::DEL_GRADE . "&id={$row['id']}\">删除</a></li>\n";
+				echo "<li><a href=\"manage_action.php?action=$DEL_GRADE&id={$row['id']}\" onclick=\"return delete_confirm();\" title=\"删除\">[x]</a> {$row['name']}</li>\n";
 			}
 			?>
 		</ul>
@@ -64,7 +69,7 @@ check_login();
 			<p>
 				<label for="grade">添加年级</label>
 				<input name="grade" id="grade" type="text" />
-				<input name="action" type="hidden" value="<?php echo ACTION::ADD_GRADE; ?>" />
+				<input name="action" type="hidden" value="<?php echo $ADD_GRADE; ?>" />
 				<input type="submit" />
 			</p>
 		</form>
@@ -75,8 +80,7 @@ check_login();
 			$query = "SELECT * FROM $table_event;";
 			$result = $dbc->query($query);
 			while ($row = $result->fetch_assoc()) {
-				echo "<li>{$row['name']} <a href=\"manage_action.php?action=" .
-				     ACTION::DEL_EVENT . "&id={$row['id']}\">删除</a></li>\n";
+				echo "<li><a href=\"manage_action.php?action=$DEL_EVENT&id={$row['id']}\" onclick=\"return delete_confirm();\" title=\"删除\">[x]</a> {$row['name']}</li>\n";
 			}
 			?>
 		</ul>
@@ -84,12 +88,12 @@ check_login();
 			<p>
 				<label for="event">添加项目</label>
 				<input name="event" id="event" type="text" />
-				<input name="action" type="hidden" value="<?php echo ACTION::ADD_EVENT; ?>" />
+				<input name="action" type="hidden" value="<?php echo $ADD_EVENT; ?>" />
 				<input type="submit" />
 			</p>
 		</form>
 		<hr />
-		<p>♥ Proudly powered by Spoquery, made in HCC.</p>
+		<p class="xsmall">♥ <?php echo $footer_string; ?></p>
   	</div>
 </body>
 </html>

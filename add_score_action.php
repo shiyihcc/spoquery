@@ -11,7 +11,7 @@ $count = (int)$_REQUEST['count'];
 $match_id = NULL;
 
 # Check if the match is already added.
-$query = "SELECT id FROM $table_match WHERE grade_id=$grade_id AND event_id=$event_id;";
+$query = "SELECT id FROM $table_match WHERE grade_id = $grade_id AND event_id = $event_id;";
 $result = $dbc->query($query);
 if ($row = $result->fetch_assoc()) {
 	# Get match
