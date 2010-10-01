@@ -2,8 +2,8 @@
 
 ### 数据库相关设置 ###
 
-define('DB_USER', 'sportsuser');
-define('DB_PASWORD', 'ATPPx7vRMmdjbQXG');
+define('DB_USER', 'user');
+define('DB_PASWORD', 'password');
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'sports');
 
@@ -26,7 +26,7 @@ $event_shortname = '2010年秋季运动会';
 ### 其他设置 ###
 
 # 管理员密码
-$admin_password = 'miaooo';
+$admin_password = 'miao!!!';
 
 $debug = TRUE;
 

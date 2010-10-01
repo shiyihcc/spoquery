@@ -1,84 +1,81 @@
 @charset "utf-8"
 
 body {
-	padding: 0px;
-	margin: 0px;
-	font-size: 16px;
-	font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti !important;
+    padding: 0px;
+    margin: 0px;
+    font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "WenQuanYi Micro Hei", STHeiti !important;
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
 }
-/* FIXME: color */
 a:link, a:visited {
-	color: #444991;
+    color: #444991;
 }
 a:hover {
-	color: #666fff;
+    color: #666fff;
 }
 
-/* FIXME: color */
 #wrapper {
-	margin: 12px auto;
-	width: 760px;
-	padding: 14px;
-	border: solid 2px #b7ddf2;
-	background: #ebf4fb;
+    margin: 12px auto;
+    width: 760px;
+    padding: 14px;
+    border: solid 2px #b7ddf2;
+    background: #ebf4fb;
 }
 h1 {
-	font-size: 1.2em;
-	font-weight: bold;
-	margin-bottom: 8px;
+    font-size: 19px;
+    line-height: 28px;
+    margin-bottom: 8px;
 }
 h2 {
-	font-size: 1.1em;
+    font-size: 17px;
 }
 p {
-	color: #666666;
-	margin-bottom: 12px;
+    color: #666666;
+    margin-bottom: 6px;
 }
 hr {
-	width: 100%;
-	border: 0;
-	border-bottom: solid 1px #b7ddf2;
+    width: 100%;
+    border: 0;
+    border-bottom: solid 1px #b7ddf2;
 }
 table {
-	margin: 10px auto;
-	border-collapse: collapse;
+    margin: 10px auto;
+    border-collapse: collapse;
 }
 td, th {
-	border: 1px solid #46ABE4;
-	padding: 0;
+    border: 1px solid #46ABE4;
+    padding: 0;
 }
 th {
-	text-align: left;
-	padding: 5px 5px;
-	background-color: #46ABE4;
-	color: #fff;
+    text-align: left;
+    padding: 5px 5px;
+    background-color: #46ABE4;
+    color: #fff;
 }
 tr td {
-	background-color: #fff;
+    background-color: #fff;
 }
 tr.alt td {
-	background-color: #ebf4fb;
+    background-color: #ebf4fb;
 }
 
 .disable {
-	background-color: #E5E5E5;
+    background-color: #E5E5E5;
 }
 .xsmall {
-	font-size: 0.75em;
+    font-size: 12px;
 }
 .small {
-	font-size: 0.9em;
+    font-size: 14px;
 }
 .warn {
-	width: 540px;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	border: 2px solid #E8B74E;
-	background-color: #FFF7BC;
-	padding: 10px;
+    width: 540px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #E8B74E;
+    background-color: #FFFAD5;
+    padding: 10px;
 }

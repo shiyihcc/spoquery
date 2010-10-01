@@ -28,12 +28,12 @@ function redirect_with_alert($alert, $addr) {
 EOF;
 }
 
-function back_with_alert($alert) {
+function back_with_alert($alert, $step = 1) {
 	echo <<<EOF
 <meta charset="utf-8" />
 <script>
 	alert("{$alert}");
-	history.back();
+	history.go(-$step);
 </script>
 EOF;
 }

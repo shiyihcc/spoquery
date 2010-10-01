@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `2010_grade` (
 CREATE TABLE IF NOT EXISTS `2010_match` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `grade_id` smallint(5) unsigned NOT NULL,
-  `event_id` smallint(5) unsigned zerofill NOT NULL,
+  `event_id` smallint(5) unsigned NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
