@@ -19,6 +19,7 @@ td input {
 	font-size: 0.9em;
 	margin: 0;
 	border: 0;
+	border-bottom: 1px solid #46ABE4;;
 	padding: 6px;
 }
 .rank {

@@ -46,7 +46,8 @@ hr {
 }
 
 ul {
-    margin: 0;
+    margin-top: 0 auto 3px 0;
+    padding-left: 28px;
 }
 li {
     margin-bottom: 3px;
@@ -57,9 +58,12 @@ li {
 table {
     margin: 10px auto;
     border-collapse: collapse;
+    border-color: #46ABE4;
+    border-style: solid;
+    border-width: 4px 2px;
 }
 td, th {
-    border: 1px solid #46ABE4;
+    border-right: 1px solid #46ABE4;
     padding: 0;
 }
 th {
@@ -71,8 +75,36 @@ th {
 tr td {
     background-color: #fff;
 }
-tr.alt td {
-    background-color: #ebf4fb;
+tr.gold td {
+    background-color: #FFF8C6;
+}
+tr.silver td {
+    background-color: #E8E8E8;
+}
+tr.bronze td {
+    background-color: #FFEDCA;
+}
+
+.input {
+    padding: 6px;
+    width: 150px;
+    outline: none;
+    font-size: 13px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #717171;
+    background-color: #FEFAE0;
+}
+.input:focus {
+    -webkit-box-shadow: 0px 0px 5px #007eff;
+    -moz-box-shadow: 0px 0px 5px #007eff;
+    box-shadow: 0px 0px 5px #007eff;
+}
+
+.column {
+    float: left;
+    margin-bottom: 5px;
 }
 
 .disable {
@@ -87,9 +119,13 @@ tr.alt td {
 .warn {
     width: 540px;
     text-align: center;
+    font-size: 14px;
     margin-left: auto;
     margin-right: auto;
     border: 2px solid #E8B74E;
     background-color: #FFFAD5;
     padding: 10px;
+}
+.warn.left {
+    text-align: left;
 }
