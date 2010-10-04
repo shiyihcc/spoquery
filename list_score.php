@@ -5,7 +5,7 @@ require('inc/admin_common.php');
 $login = is_login();
 
 $grade = (int)$_REQUEST['grade'];
-$class = (int)$_REQUEST['class'];
+$class = escape_data($_REQUEST['class']);
 $name = escape_data($_REQUEST['name']);
 ?>
 <!DOCTYPE html>
@@ -29,13 +29,13 @@ td {
     width: 100px;
 }
 #class {
-    width: 50px;
+    width: 80px;
 }
 #score {
     width: 120px;
 }
 #manage {
-    width: 90px;
+    width: 80px;
 }
     </style>
     <script type="text/javascript">
@@ -71,8 +71,8 @@ td {
                      $table_score.match_id = $table_match.id AND
                      $table_match.grade_id = $table_grade.id AND
                      $table_match.event_id = $table_event.id";
-            if ($class)
-                $query .= " AND $table_score.class = $class";
+            if ($class && $class != "输入班级")
+                $query .= " AND $table_score.class = '$class'";
             if ($grade)
                 $query .= " AND $table_match.grade_id = $grade";
             if ($name && $name != "输入姓名")
@@ -99,7 +99,7 @@ td {
                 echo "<tr$medal><td>{$row['grade']}{$row['event']}</td>" .
                      "<td>{$row['rank']}</td>" .
                      "<td>{$row['name']}</td>" .
-                     "<td>{$row['class']}</td>";
+                     "<td>{$row['class']}班</td>";
                 if ($row['rank'] == 1)
                     echo "<td><strong>{$row['score']}</strong></td>";
                 else

@@ -24,7 +24,7 @@ td {
     width: 120px;
 }
 #class {
-    width: 60px;
+    width: 80px;
 }
 #score {
     width: 140px;
@@ -76,7 +76,7 @@ td {
                 }
                 echo "<tr$medal><td>{$row['rank']}</td>" .
                      "<td>{$row['name']}</td>" .
-                     "<td>{$row['class']}</td>";
+                     "<td>{$row['class']}班</td>";
                 if ($row['rank'] == 1)
                     echo "<td><strong>{$row['score']}</strong></td>";
                 else

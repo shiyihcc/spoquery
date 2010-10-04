@@ -15,16 +15,16 @@ session_start();
 function check_login()
 {
     global $session_login;
-	if (!$_SESSION[$session_login]) {
-		redirect_with_alert('呃，貌似你没有登录...', '/');
-		exit();
-	}
+        if (!$_SESSION[$session_login]) {
+                redirect_with_alert('呃，貌似你没有登录...', '/');
+                exit();
+        }
 }
 
 function is_login()
 {
     global $session_login;
-	return $_SESSION[$session_login];
+        return $_SESSION[$session_login];
 }
 
 ?>

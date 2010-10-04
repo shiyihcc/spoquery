@@ -85,8 +85,14 @@ tr.bronze td {
     background-color: #FFEDCA;
 }
 
+.align_left {
+    text-align: left !important;
+}
 .align_right {
-    text-align: right;
+    text-align: right !important;
+}
+.align_center {
+    text-align: center !important;
 }
 
 .input {
@@ -124,12 +130,17 @@ tr.bronze td {
     width: 540px;
     text-align: center;
     font-size: 14px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     border: 2px solid #E8B74E;
     background-color: #FFFAD5;
     padding: 10px;
 }
-.warn.left {
-    text-align: left;
+.info {
+    width: 540px;
+    text-align: center;
+    font-size: 14px;
+    margin: auto;
+    border: 2px solid #3CA935;
+    background-color: #EBFFEA;
+    padding: 10px;
 }

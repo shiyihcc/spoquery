@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2010 年 09 月 30 日 19:19
+-- 生成日期: 2010 年 10 月 04 日 13:17
 -- 服务器版本: 5.0.51
 -- PHP 版本: 5.2.4-2ubuntu5.10
 
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `2010_score` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `match_id` smallint(5) unsigned NOT NULL,
   `name` varchar(200) NOT NULL,
-  `class` smallint(5) unsigned NOT NULL,
+  `class` varchar(10) NOT NULL,
   `rank` smallint(5) unsigned NOT NULL,
   `score` varchar(250) NOT NULL,
   PRIMARY KEY  (`id`)

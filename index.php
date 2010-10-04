@@ -2,16 +2,12 @@
 # TODO:
 # Check SQL injure
 # Delete match
-# Jianhua classes (class -> string)
-#  - Deal with "输入班级" string
 
 # TODO improve:
-# Use spaces instead of tabs
 # Deal with no result
 # Make search result clickable
 # Drop alerts
 # Better IE 6 support
-# Input guide
 
 require('inc/common.php');
 require('inc/admin_common.php');
@@ -60,7 +56,7 @@ $login = is_login();
         }
         if ($greet) {
             echo <<<EOF
-        <div class="warn left">$greet</div>
+        <div class="warn align_left">$greet</div>
         <hr />
 EOF;
         }
