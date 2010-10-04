@@ -57,11 +57,12 @@ td input {
 				$result = $dbc->query($query);
 				$row = $result->fetch_assoc();
 				$match = get_match_name_by_id($row['match_id']);
-				echo "<tr><td class=\"match\"><input type=\"text\" class=\"match disable\" value=\"$match\" readonly=\"readonly\" /></td>" .
+				$score = htmlspecialchars($row['score']);
+                echo "<tr><td class=\"match\"><input type=\"text\" class=\"match disable\" value=\"$match\" readonly=\"readonly\" /></td>" .
 				     "<td><input type=\"text\" name=\"rank\" class=\"rank\" value=\"{$row['rank']}\" /></td>" .
 					 "<td><input type=\"text\" name=\"name\" class=\"name\" value=\"{$row['name']}\" /></td>" .
 					 "<td><input type=\"text\" name=\"class\" class=\"class\" value=\"{$row['class']}\" /></td></td>" .
-					 "<td><input type=\"text\" name=\"score\" class=\"score\" value=\"{$row['score']}\" /></td></td></tr>";
+					 "<td><input type=\"text\" name=\"score\" class=\"score\" value=\"$score\" /></td></td></tr>";
 				?>
 			</table>
 			<p><input type="hidden" name="score_id" value="<?php echo $score_id; ?>" /><input type="submit" value="提交" /></p>

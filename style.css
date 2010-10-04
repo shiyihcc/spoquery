@@ -85,6 +85,10 @@ tr.bronze td {
     background-color: #FFEDCA;
 }
 
+.align_right {
+    text-align: right;
+}
+
 .input {
     padding: 6px;
     width: 150px;

@@ -1,13 +1,17 @@
 <?php
 # TODO:
 # Check SQL injure
+# Delete match
 # Jianhua classes (class -> string)
-# Deal with "输入班级" string
+#  - Deal with "输入班级" string
 
 # TODO improve:
 # Use spaces instead of tabs
 # Deal with no result
 # Make search result clickable
+# Drop alerts
+# Better IE 6 support
+# Input guide
 
 require('inc/common.php');
 require('inc/admin_common.php');
@@ -54,9 +58,13 @@ $login = is_login();
         if ($login) {
             echo '<p class="small"><a href="manage.php">管理面版</a> | <a href="logout_action.php">登出</a></p><hr />';
         }
-        ?>
-        <div class="warn left"><p>大家好，我今天一个误操作，导致整个数据库被 drop。在此，我表示最诚挚的歉意。我真的错了…输分的同志们，我对不起你们…原谅我。你们辛苦了～</p><p>另外如果大家遇到什么问题，可以邮件联系我：liu.dongyuan@gmail.com。再次对你们表示感谢。</p><p>关于建华的班级，请先写为 10x 班。如建华2班写为 102 班。</p><p>关于并列的成绩，名次那个框内容是可以改的。把名次改成一样的就行了。</p><p class="xsmall" style="text-align: right;">柳东原 2010年9月30日</p></div>
+        if ($greet) {
+            echo <<<EOF
+        <div class="warn left">$greet</div>
         <hr />
+EOF;
+        }
+        ?>
         <div class="column" id="column1">
             <h2>按年级查询</h2>
             <ul>
