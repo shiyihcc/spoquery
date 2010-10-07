@@ -28,6 +28,12 @@ check_login();
     </script>
 </head>
 <body>
+    <?php
+    if ($_SESSION['notify']) {
+        echo "<div class=\"notify\"><p class=\"info\">{$_SESSION['notify']}</p></div>";
+        $_SESSION['notify'] = '';
+    }
+    ?>
     <div id="wrapper">
         <h1><?php
         if ($event_prefix)
@@ -51,7 +57,7 @@ check_login();
                     </select>
                     <select name="event">
                         <?php
-                        $query = "SELECT * FROM $table_event;";
+                        $query = "SELECT * FROM $table_event ORDER BY name;";
                         $result = $dbc->query($query);
                         while ($row = $result->fetch_assoc()) {
                             echo "<option value=\"{$row['id']}\">{$row['name']}</option>\n";
@@ -89,7 +95,7 @@ check_login();
             <h2>管理项目</h2>
             <ul>
                 <?php
-                $query = "SELECT * FROM $table_event;";
+                $query = "SELECT * FROM $table_event ORDER BY name;";
                 $result = $dbc->query($query);
                 while ($row = $result->fetch_assoc()) {
                     echo "<li><a href=\"manage_action.php?action=$DEL_EVENT&id={$row['id']}\" onclick=\"return delete_confirm();\" title=\"删除\">[x]</a> {$row['name']}</li>\n";

@@ -3,9 +3,11 @@
 require('inc/common.php');
 require('inc/admin_common.php');
 
+$_SESSION[$session_login] = FALSE;
 $_SESSION = array();
-session_destroy();
-setcookie('PHPSESSID', '', time()-300, '/', '', 0);
-redirect_with_alert('登出成功！', 'index.php');
+
+$_SESSION['notify'] = '登出成功！';
+$_SESSION['notify_type'] = 'info';
+redirect('index.php');
 
 ?>

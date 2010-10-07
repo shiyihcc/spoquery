@@ -5,10 +5,14 @@ require('inc/admin_common.php');
 
 if ($_REQUEST['password'] == $admin_password) {
     $_SESSION[$session_login] = TRUE;
-    redirect_with_alert('登录成功！', 'index.php');
+    $_SESSION['notify'] = '登录成功！';
+    $_SESSION['notify_type'] = 'info';
+    redirect('index.php');
 }
 else {
-    redirect_with_alert('密码输错了...', 'index.php');
+    $_SESSION['notify'] = '密码输错了...';
+    $_SESSION['notify_type'] = 'warn';
+    redirect('index.php');
 }
 
 ?>

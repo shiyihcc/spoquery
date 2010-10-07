@@ -41,6 +41,12 @@ td {
     </script>
 </head>
 <body>
+    <?php
+    if ($_SESSION['notify']) {
+        echo "<div class=\"notify\"><p class=\"info\">{$_SESSION['notify']}</p></div>";
+        $_SESSION['notify'] = '';
+    }
+    ?>
     <div id="wrapper">
         <h1><?php
         if ($event_prefix)

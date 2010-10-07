@@ -10,10 +10,10 @@ a {
     text-decoration: none;
 }
 a:link, a:visited {
-    color: #444991;
+    color: #005591;
 }
 a:hover {
-    color: #666fff;
+    color: #00233D;
 }
 
 #wrapper {
@@ -43,6 +43,7 @@ hr {
     border: 0;
     margin: 10px auto;
     border-bottom: solid 1px #b7ddf2;
+    clear: both;
 }
 
 ul {
@@ -52,7 +53,7 @@ ul {
 li {
     margin-bottom: 3px;
     padding-left: 0;
-    color: #005591;
+    color: #00233D;
 }
 
 table {
@@ -115,6 +116,7 @@ tr.bronze td {
 .column {
     float: left;
     margin-bottom: 5px;
+    display: inline; /* Fix major IE 6 issue. */
 }
 
 .disable {
@@ -143,4 +145,18 @@ tr.bronze td {
     border: 2px solid #3CA935;
     background-color: #EBFFEA;
     padding: 10px;
+}
+.notify {
+    width: 100%;
+    position: fixed;
+    top: 36px;
+
+}
+.notify p {
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    opacity: 0.8;
+    margin: auto;
+    width: 320px;
 }

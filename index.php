@@ -6,8 +6,7 @@
 # TODO improve:
 # Deal with no result
 # Make search result clickable
-# Drop alerts
-# Better IE 6 support
+# list_match: columns
 
 require('inc/common.php');
 require('inc/admin_common.php');
@@ -38,10 +37,18 @@ $login = is_login();
     function show_login() {
         var login_form = document.getElementById("login_form");
         login_form.style.display = "block";
+        var password = document.getElementById("password");
+        password.focus();
     }
     </script>
 </head>
 <body>
+    <?php
+    if ($_SESSION['notify']) {
+        echo "<div class=\"notify\"><p class=\"{$_SESSION['notify_type']}\">{$_SESSION['notify']}</p></div>";
+        $_SESSION['notify'] = '';
+    }
+    ?>
     <div id="wrapper">
         <h1><?php
         if ($event_prefix)
@@ -129,7 +136,7 @@ EOF;
         if (!$login) {
             echo <<<EOF
         <form id="login_form" action="login_action.php" method="get" style="display: none;">
-            <p><input type="password" name="password" /></p>
+            <p><input id="password" type="password" name="password" /></p>
             <p><input type="submit" value="管理登录" /></p>
             <hr />
         </form>

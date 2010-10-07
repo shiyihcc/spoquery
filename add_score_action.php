@@ -41,5 +41,7 @@ for ($i = 1; $i <= $count; $i++) {
     }
 }
 
-redirect_with_alert('恭喜，添加成绩成功！', 'manage.php');
+$_SESSION['notify'] = '恭喜，添加成绩成功！';
+$_SESSION['notify_type'] = 'info';
+redirect('manage.php');
 ?>
