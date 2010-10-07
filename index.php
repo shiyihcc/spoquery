@@ -1,7 +1,6 @@
 <?php
 # TODO:
 # Check SQL injure
-# Delete match
 
 # TODO improve:
 # Deal with no result

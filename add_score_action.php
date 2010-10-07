@@ -21,7 +21,7 @@ else {
     # Add match
     $query = "INSERT INTO $table_match VALUES(NULL, $grade_id, $event_id);";
     $dbc->query($query);
-    if (!$dbc->affected_rows) {
+    if ($dbc->affected_rows != 1) {
         redirect_with_alert('出现错误，请联系系统管理员！', 'manage.php');
     }
     $match_id = $dbc->insert_id;
@@ -36,7 +36,7 @@ for ($i = 1; $i <= $count; $i++) {
 
     $query = "INSERT INTO $table_score(name, match_id, class, rank, score) VALUES('$name', $match_id, '$class', $rank, '$score');";
     $dbc->query($query);
-    if (!$dbc->affected_rows) {
+    if ($dbc->affected_rows != 1) {
         redirect_with_alert('出现错误，请联系系统管理员！', 'manage.php');
     }
 }

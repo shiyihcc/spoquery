@@ -28,7 +28,7 @@ ul {
 <body>
     <?php
     if ($_SESSION['notify']) {
-        echo "<div class=\"notify\"><p class=\"info\">{$_SESSION['notify']}</p></div>";
+        echo "<div class=\"notify\"><p class=\"{$_SESSION['notify_type']}\">{$_SESSION['notify']}</p></div>";
         $_SESSION['notify'] = '';
     }
     ?>
@@ -62,7 +62,7 @@ ul {
             while ($row = $result->fetch_assoc()) {
                 echo "<li>";
                 if ($login) {
-                    echo "<a href=\"javascript:alert('对不起，该功能暂不可用...')\" onclick=\"return delete_confirm();\" title=\"删除\">[x]</a> ";
+                    echo "<a href=\"delete_match_action.php?id={$row['id']}\" onclick=\"return delete_confirm();\" title=\"删除\">[x]</a> ";
                 }
                 echo "<a href=\"show_match.php?id={$row['id']}\">{$row['grade']}{$row['event']}</a></li>";
             }

@@ -12,7 +12,7 @@ case $ADD_EVENT:
     $event = escape_data($_REQUEST['event']);
     $query = "INSERT INTO $table_event VALUES(NULL, '$event');";
     $dbc->query($query);
-    if ($dbc->affected_rows) {
+    if ($dbc->affected_rows == 1) {
         $_SESSION['notify'] = '添加项目成功！';
         $_SESSION['notify_type'] = 'info';
         redirect('manage.php');
@@ -30,7 +30,7 @@ case $DEL_EVENT:
     else {
         $query = "DELETE FROM $table_event WHERE id = $id LIMIT 1;";
         $dbc->query($query);
-        if ($dbc->affected_rows) {
+        if ($dbc->affected_rows == 1) {
             $_SESSION['notify'] = '删除项目成功！';
             $_SESSION['notify_type'] = 'info';
             redirect('manage.php');
@@ -44,7 +44,7 @@ case $ADD_GRADE:
     $grade = escape_data($_REQUEST['grade']);
     $query = "INSERT INTO $table_grade VALUES(NULL, '$grade');";
     $dbc->query($query);
-    if ($dbc->affected_rows) {
+    if ($dbc->affected_rows == 1) {
         $_SESSION['notify'] = '添加年级成功！';
         $_SESSION['notify_type'] = 'info';
         redirect('manage.php');
@@ -63,7 +63,7 @@ case $DEL_GRADE:
         $id = (int)$_REQUEST['id'];
         $query = "DELETE FROM $table_grade WHERE id = $id LIMIT 1;";
         $dbc->query($query);
-        if ($dbc->affected_rows) {
+        if ($dbc->affected_rows == 1) {
             $_SESSION['notify'] = '删除年级成功！';
             $_SESSION['notify_type'] = 'info';
             redirect('manage.php');

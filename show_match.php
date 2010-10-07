@@ -43,7 +43,7 @@ td {
 <body>
     <?php
     if ($_SESSION['notify']) {
-        echo "<div class=\"notify\"><p class=\"info\">{$_SESSION['notify']}</p></div>";
+        echo "<div class=\"notify\"><p class=\"{$_SESSION['notify_type']}\">{$_SESSION['notify']}</p></div>";
         $_SESSION['notify'] = '';
     }
     ?>

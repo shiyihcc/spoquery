@@ -7,6 +7,8 @@ $login = is_login();
 $grade = (int)$_REQUEST['grade'];
 $class = escape_data($_REQUEST['class']);
 $name = escape_data($_REQUEST['name']);
+
+$order = $_REQUEST['order'];
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -48,7 +50,7 @@ td {
 <body>
     <?php
     if ($_SESSION['notify']) {
-        echo "<div class=\"notify\"><p class=\"info\">{$_SESSION['notify']}</p></div>";
+        echo "<div class=\"notify\"><p class=\"{$_SESSION['notify_type']}\">{$_SESSION['notify']}</p></div>";
         $_SESSION['notify'] = '';
     }
     ?>
@@ -83,7 +85,8 @@ td {
                 $query .= " AND $table_match.grade_id = $grade";
             if ($name && $name != "输入姓名")
                 $query .= " AND $table_score.name LIKE '%$name%'";
-            $query .= " ORDER BY $table_match.id, $table_score.rank;";
+            if ($order != "none")
+                $query .= " ORDER BY $table_match.id, $table_score.rank;";
 
             if ($debug && $login)
                 echo "<p class=\"xsmall\">" . $query . "</p>";
