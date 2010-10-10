@@ -40,7 +40,7 @@ check_login();
             echo $event_prefix . '<br />';
         echo $event_name;
         ?>分数查询系统</h1>
-        <p class="small"><a href="http://www.shiyihcc.com">HCC</a> » <a href="index.php">分数查询系统</a> » 管理面版</p>
+        <p class="small"><a href="http://www.shiyihcc.com">HCC</a> » <a href="./">分数查询系统</a> » 管理面版</p>
         <hr />
         <div class="column" id="column1">
             <h2>添加比赛成绩</h2>

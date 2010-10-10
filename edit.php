@@ -43,7 +43,7 @@ td input {
             echo $event_prefix . '<br />';
         echo $event_name;
         ?>分数查询系统</h1>
-        <p class="small"><a href="http://www.shiyihcc.com">HCC</a> » <a href="index.php">分数查询系统</a> » 修改成绩</p>
+        <p class="small"><a href="http://www.shiyihcc.com">HCC</a> » <a href="./">分数查询系统</a> » 修改成绩</p>
         <hr />
         <form action="edit_action.php" method="post">
             <table>

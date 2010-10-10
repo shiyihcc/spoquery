@@ -43,7 +43,7 @@ td input {
             echo $event_prefix . '<br />';
         echo $event_name;
         ?>分数查询系统</h1>
-        <p class="small"><a href="http://www.shiyihcc.com">HCC</a> » <a href="index.php">分数查询系统</a> » 添加成绩</p>
+        <p class="small"><a href="http://www.shiyihcc.com">HCC</a> » <a href="./">分数查询系统</a> » 添加成绩</p>
         <hr />
         <h2><?php echo get_match_name_by_grade_and_event($grade_id, $event_id); ?></h2>
         <?php

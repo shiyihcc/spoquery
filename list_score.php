@@ -60,7 +60,7 @@ td {
             echo $event_prefix . '<br />';
         echo $event_name;
         ?>分数查询系统</h1>
-        <p class="small"><a href="http://www.shiyihcc.com">HCC</a> » <a href="index.php">分数查询系统</a> » 查询成绩</p>
+        <p class="small"><a href="http://www.shiyihcc.com">HCC</a> » <a href="./">分数查询系统</a> » 查询成绩</p>
         <hr />
         <table>
             <tr><th id="match">比赛</th><th id="rank">名次</th><th id="name">姓名</th><th id="class">班级</th><th id="score">成绩</th><?php if ($login) echo "<th id=\"manage\">管理</th>" ?></tr>

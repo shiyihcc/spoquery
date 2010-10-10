@@ -53,7 +53,7 @@ td {
             echo $event_prefix . '<br />';
         echo $event_name;
         ?>分数查询系统</h1>
-        <p class="small"><a href="http://www.shiyihcc.com">HCC</a> » <a href="index.php">分数查询系统</a> » 查看比赛</p>
+        <p class="small"><a href="http://www.shiyihcc.com">HCC</a> » <a href="./">分数查询系统</a> » 查看比赛</p>
         <hr />
         <h2><?php echo get_match_name_by_id($match_id); ?></h2>
         <table>

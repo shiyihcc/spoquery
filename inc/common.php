@@ -3,7 +3,7 @@
 require('config.php');
 require('mysql_conn.php');
 
-$app_version = '0.2.0pre';
+$app_version = '0.2.0';
 
 $session_login = 'Spoquery-' . $app_unique_id . '-login';
 
